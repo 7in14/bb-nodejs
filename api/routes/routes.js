@@ -8,4 +8,10 @@ module.exports = function(app) {
 
   app.route('/dataSources')
     .get(notificationController.read_notifications);
+
+  app.route('/dataSource/:id')
+    .get(notificationController.find_notification);
+
+  app.route('/dataSource')
+    .put(notificationController.insert_notification);
 };
