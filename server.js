@@ -5,9 +5,6 @@ var express = require('express'),
   Notification = require('./api/models/notificationModel'),
   bodyParser = require('body-parser');
 
-var routes = require('./api/routes/routes'); //importing routes
-routes(app); //register the route
-
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
 
@@ -23,6 +20,8 @@ mongoose.connect('mongodb://7in14-db.documents.azure.com:10255/?ssl=true', {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+var routes = require('./api/routes/routes'); //importing routes
+routes(app); //register the route
 
 app.listen(port);
 

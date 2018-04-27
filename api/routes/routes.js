@@ -9,7 +9,7 @@ module.exports = function(app) {
   app.route('/dataSources')
     .get(notificationController.read_notifications);
 
-  app.route('/dataSource/:id')
+  app.route('/dataSource/:notificationId')
     .get(notificationController.find_notification);
 
   app.route('/dataSource')
